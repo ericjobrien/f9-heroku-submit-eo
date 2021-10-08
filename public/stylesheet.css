@@ -1,4 +1,62 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: black;
+    display: block;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 20vh;
+}
+.above-container {
+    display: inline;
+    text-align: center;
+    justify-content: center;
+    background-color: floralwhite;
+}
+
+h1 {
+    color: darkred;
+}
+
+p {
+    color: firebrick;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin-left: 22vw;
+    border-radius: 20px;
+    
+}
+
+#left-container {
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-indent: 5px;
+    background-image: url('https://alanrinzler.com/wp-content/uploads/2008/05/gutsballhstpic.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black;
+    border-radius: 10px;
+    font-size: 28px;
+}
+
+#right-container {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    border-left: 2px 1px black;
+    background-color: rgb(205, 206, 169);
+    font-family: 'Times New Roman', Times, serif;
+    background-size: 25vw;
+    font-size: 28px;
+    width: 300px
 }
