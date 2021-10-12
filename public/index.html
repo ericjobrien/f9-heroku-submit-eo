@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 </head>
 <body>
     <section class='above-container'>
@@ -23,7 +24,7 @@
         <div id="right-container">
             <p>First Name:</p>
                 <form>
-                    <input type="text" placeholder="first name"/>
+                    <input id="firstName" type="text" placeholder="first name"/>
                 </form>
             <p>Last Name:</p>
                 <form>
@@ -36,6 +37,26 @@
             <span>
                 <button>register for workshop</button>
             </span>
+            <section id="post"></section>
+            <script>
+                
+                const container = document.getElementById('post');
+                const nameInput = document.getElementById('firstName');
+
+                function submitHandler(e) {
+                    e.preventDefault()
+                    axios.post('/api/firstName', {name: nameInput.value})
+                    .then(res => {
+                        container.innerHTML = '';
+                        nameInput = '';
+
+                        res.data.forEach(name => {
+                            container.innerHTML += `<p>${name}</p>`
+                        })
+                    })
+                }
+            </script>
+
         </div>
     </section>
 </body>
