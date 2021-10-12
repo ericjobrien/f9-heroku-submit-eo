@@ -21,7 +21,23 @@ app.get('/', (req, res) => { res.sendFile(path.join(__dirname, "../public/index.
 //middleware to access the css file
 app.get('/stylesheet.css', (req, res) => { res.sendFile(path.join(__dirname, "../public/stylesheet.css"))});
 
+let firstName = [];
 
+app.post('/api/firstName', (req, res) => {
+    let { name } = req.body;
+    name = name.trim();
+
+    const index = firstName.findIndex(firstName => firstName === name);
+
+    if(index === -1) {
+        firstName.push(name);
+        rollbar.log('Frist name added successfully', {author: 'Frank'})
+        res.status(200).send(firstName);
+    } else {
+        rollbar.error('you done messed up')
+        res.status(400).send('that student already exists')
+    }
+})
 
 
 const port = process.env.PORT || 4004;
