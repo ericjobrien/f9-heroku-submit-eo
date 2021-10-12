@@ -27,3 +27,4 @@ app.get('/stylesheet.css', (req, res) => { res.sendFile(path.join(__dirname, "..
 const port = process.env.PORT || 4004;
 app.listen(port, () => { console.log(`Server is running on ${port}`)});
 
+rollbar.log("hello world!");
