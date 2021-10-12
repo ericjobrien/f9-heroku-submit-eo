@@ -40,6 +40,7 @@
             <section id="post"></section>
             <script>
                 
+                const form = document.querySelector('form');
                 const container = document.getElementById('post');
                 const nameInput = document.getElementById('firstName');
 
@@ -59,7 +60,7 @@
                     })
                 }
 
-                nameInput.addEventListener('keydown', submitHandler)
+                form.addEventListener('sumbit', submitHandler);
             </script>
 
         </div>
