@@ -54,7 +54,12 @@
                             container.innerHTML += `<p>${name}</p>`
                         })
                     })
+                    .catch(err => {
+                        console.log(err);
+                    })
                 }
+
+                nameInput.addEventListener('keydown', submitHandler)
             </script>
 
         </div>
